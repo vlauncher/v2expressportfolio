@@ -3,6 +3,8 @@ let expressLayouts = require('express-ejs-layouts')
 let path = require('path')
 let mongoose = require('mongoose')
 let multer = require('multer')
+let helmet = require('helmet')
+let session = require('express-session')
 let app = express()
 //Routes
 let IndexRouter = require('./routes/index')
@@ -11,6 +13,18 @@ let IndexRouter = require('./routes/index')
 app.use(expressLayouts)
 app.set('view engine', 'ejs');
 
+//express session
+app.set('trust-proxy',1)
+app.use(session({
+  secret:'lifesucks3',
+  name:'v2dents',
+  cookie:{
+    httpOnly:true,
+    secure:true
+  }
+}))
+//helmet setup
+app.use(helmet())
 //database setup
 mongoose.connect('mongodb://localhost/Portfoliodb',{useNewUrlParser:true,useUnifiedTopology:true},(err) =>{
   if(err){
