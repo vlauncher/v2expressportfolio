@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Use Routes
 app.use('/',IndexRouter)
 //app port
-app.listen(3000,(err)=>{
+app.listen(process.env.PORT || 3000,(err)=>{
   if(err){
     console.log(err);
   }else{
