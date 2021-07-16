@@ -16,6 +16,8 @@ app.set('view engine', 'ejs');
 //express session
 app.set('trust-proxy',1)
 app.use(session({
+  saveUninitialized:true,
+  resave:false,
   secret:'lifesucks3',
   name:'v2dents',
   cookie:{
