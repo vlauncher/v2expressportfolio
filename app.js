@@ -2,7 +2,7 @@ let express = require('express')
 let expressLayouts = require('express-ejs-layouts')
 let path = require('path')
 let mongoose = require('mongoose')
-
+let multer = require('multer')
 let app = express()
 //Routes
 let IndexRouter = require('./routes/index')

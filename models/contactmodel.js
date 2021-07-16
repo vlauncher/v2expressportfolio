@@ -15,6 +15,10 @@ const contactModelSchema = mongoose.Schema({
     message : {
         type : String,
         required : true
+    },
+    image : {
+        data : Buffer,
+        contentType : String
     }
 })
 
