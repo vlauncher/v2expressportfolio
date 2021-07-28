@@ -1,0 +1,22 @@
+
+<main id="main" class="my-5" style="padding-top : 55px;">
+    <% if(items.length > 0) { %>
+        <% items.forEach(function(rev){ %>
+            <div class="container my-5">
+                <div class="card" style="width: 40%;margin: auto;">
+                    <div class="card-title">
+                        <%= rev.subject %>
+                    </div>
+                    <div class="card-body">
+                        <%= rev.message %>
+                    </div>
+                    <div class="card-footer">
+                        <%= rev.name %>
+                    </div>
+                </div>
+            </div>
+       <% }) %>
+   <% } else { %>
+    <h5 class="text-center">No Reviews Yet</h5>
+  <% } %>
+</main>

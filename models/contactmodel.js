@@ -9,16 +9,10 @@ const contactModelSchema = mongoose.Schema({
     },
     subject : {
         type : String,
-        required : true
     },
     message : {
         type : String,
-        required : true
     },
-    image : {
-        data : Buffer,
-        contentType : String
-    }
 })
 
 const contactModel = module.exports =new mongoose.model('contactModel',contactModelSchema)
