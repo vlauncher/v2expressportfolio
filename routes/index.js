@@ -8,10 +8,10 @@ let path = require('path')
 let multer = require('multer')
 var storage = multer.diskStorage({
   destination : (req,file,cb) =>{
-    cb(null,'uploads')
+    cb(null,'public/uploads')
   },
   filename : (req,file,cb)=>{
-    cb(null,file.fieldname + '_' +Date.now())
+    cb(null,file.fieldname + '-' +Date.now())
   }
 })
 
@@ -47,8 +47,8 @@ router.post('/contact',upload.single('image'),(req,res)=>{
    newpost.email = req.body.email;
    newpost.subject = req.body.subject;
    newpost.img ={
-       data: fs.readFileSync(path.join(__dirname+'/uploads/'+req.file.filename)),
-       contentType : 'image/jpeg'
+       data: fs.readFileSync(path.join(__dirname+'public/uploads/'+req.file.filename)),
+       contentType : 'image/png' 
    }
    newpost.save((err)=>{
        if(err){
@@ -56,7 +56,7 @@ router.post('/contact',upload.single('image'),(req,res)=>{
            return
        }else{
            console.log(newpost)
-           res.redirect('/contact')
+           res.redirect('/')
        }
    })
 })

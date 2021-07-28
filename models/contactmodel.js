@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 
 const contactModelSchema = mongoose.Schema({
     name : {
-        type : String,
-        required : true
+        type : String
     },
     email : {
         type : String
@@ -22,4 +21,4 @@ const contactModelSchema = mongoose.Schema({
     }
 })
 
-const contactModel = module.exports = mongoose.model('contactModel',contactModelSchema)
+const contactModel = module.exports =new mongoose.model('contactModel',contactModelSchema)

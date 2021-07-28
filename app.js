@@ -28,7 +28,7 @@ app.use(session({
 //helmet setup
 app.use(helmet())
 //database setup
-mongoose.connect('mongodb://localhost/Portfoliodb',{useNewUrlParser:true,useUnifiedTopology:true},(err) =>{
+mongoose.connect('mongodb+srv://v2dent:Chelsea24462!@v2dentdb.pijmi.mongodb.net/v2expressportfolio?retryWrites=true&w=majority',{useNewUrlParser:true,useUnifiedTopology:true},(err) =>{
   if(err){
     console.log('Error Connecting to the databse')
   }else{
